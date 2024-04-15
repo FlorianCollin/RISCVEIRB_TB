@@ -130,7 +130,7 @@
 
     # SH
     sh t0, 104(x0)      # MEM(26) = 5 = 0x5
-    
+
 
 # 5 #
 
@@ -173,15 +173,15 @@ blt_test_valid:
     j bge_test
 
 bge_test_valid:
-    sw t0, 122(x0)
+    sw t0, 120(x0)
     j bltu_test
 
 bltu_test_valid:
-    sw t0, 126(x0)
+    sw t0, 124(x0)
     j bgeu_test
 
 bgeu_test_valid:
-    sw t0, 130(x0)
+    sw t0, 128(x0)
     j end
 
 
