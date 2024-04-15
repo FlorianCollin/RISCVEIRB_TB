@@ -41,95 +41,95 @@
     sw x1, 16(x0)       # MEM(4) = 0 = 0x0
 
     # SLL
-    sll x1, t0, t1      # 1001 << 10 = 10010000000000
-    sw x1, 20(x0)       # MEM(5) = 9216 = 0x2400
+    sll x1, t0, t1      # 5 << 10 
+    sw x1, 20(x0)       # MEM(5) = 5120 = 0x1400
 
     # SRL
     srl x1, t0, t1      # 1001 >> 10 = 0
-    sw x1, 24(x0)       # MEM(5) = 0 = 0x0
+    sw x1, 24(x0)       # MEM(6) = 0 = 0x0
 
     # SRA
     sra x1, t0, t1      # 1001 >> 10 = 0
-    sw x1, 28(x0)       # MEM(6) = 0 = 0x0
+    sw x1, 28(x0)       # MEM(7) = 0 = 0x0
 
     # SLT
     slt x1, t0, t1      # (1001 < 10)?1:0 = 1
-    sw x1, 32(x0)       # MEM(7) = 1 = 0x1
+    sw x1, 32(x0)       # MEM(8) = 1 = 0x1
 
     # SLTU
     sltu x1, t0, t1     # (1001 < 10)?1:0 = 1
-    sw x1, 36(x0)       # MEM(8) = 1 = 0x1
+    sw x1, 36(x0)       # MEM(9) = 1 = 0x1
 
 # 2 #
 
     # ADDI
     addi x1, x0, 5     
-    sw x1, 40(x0)       # MEM(9) = 5
+    sw x1, 40(x0)       # MEM(10) = 5 = 0x5
 
     # XORI
     xori x1, t0, 0xF    
-    sw x1, 44(x0)       # MEM(9) = 6 = 0b0110 = 0x6
+    sw x1, 44(x0)       # MEM(11) = 10 = 0xa
 
     # ORI
     ori x1, t0, 0xF   
-    sw x1, 48(x0)       # MEM(10) = 15 = 0xF 
+    sw x1, 48(x0)       # MEM(12) = 15 = 0xF 
 
     # ANDI
     andi x1, t0, 0xF    
-    sw x1, 52(x0)       # MEM(11) = 5 = 0x5 
+    sw x1, 52(x0)       # MEM(13) = 5 = 0x5 
     
     # SLLI
     slli x1, t0, 0x1   
-    sw x1, 56(x0)       # MEM(12) = 10 = 0xA 
+    sw x1, 56(x0)       # MEM(14) = 10 = 0xA 
 
     # SRLI
     srli x1, t0, 0x1   
-    sw x1, 60(x0)       # MEM(13) = 2 = 0x2 
+    sw x1, 60(x0)       # MEM(15) = 2 = 0x2 
 
     # SRAI
     srai x1, t0, 0x1  
-    sw x1, 64(x0)       # MEM(14) = 2 = 0x2 
+    sw x1, 64(x0)       # MEM(16) = 2 = 0x2 
 
     # SLTI
     slti x1, t0, -1  
-    sw x1, 68(x0)       # MEM(15) = 0 = 0x0 
+    sw x1, 68(x0)       # MEM(17) = 0 = 0x0 
 
     # SLTIU
     sltiu x1, t0, -1  
-    sw x1, 72(x0)       # MEM(15) = 1 = 0x1
+    sw x1, 72(x0)       # MEM(18) = 1 = 0x1
 
 # 3 #
 
     # LB
     lb x1, 0(x0)
-    sw x1, 76(x0)       # MEM(16) = 5 =0x5
+    sw x1, 76(x0)       # MEM(19) = 15 =0xf
 
     # LH
     lh x1, 0(x0)
-    sw x1, 80(x0)       # MEM(17) = 5 =0x5
+    sw x1, 80(x0)       # MEM(20) = 15 =0xf
 
     # LW
     lw x1, 0(x0)
-    sw x1, 84(x0)       # MEM(18) = 5 =0x5
+    sw x1, 84(x0)       # MEM(21) = 15 =0xf
 
     # LBU
     lbu x1, 0(x0)
-    sw x1, 90(x0)       # MEM(19) = 5 = 0X5
+    sw x1, 88(x0)       # MEM(22) = 15 = 0Xf
 
     # LHU
     lhu x1, 0(x0)
-    sw x1, 94(x0)       # MEM(20) = 5 = 0x5
+    sw x1, 92(x0)       # MEM(23) = 15 = 0xf
 
 # 4 #
 
     # SW
-    sw t0, 98(x0)       # MEM(21) = 5 = 0x5
+    sw t0, 96(x0)       # MEM(24) = 5 = 0x5
 
     # SB
-    sb t0, 102(x0)      # MEM(22) = 5 = 0X5
+    sb t0, 100(x0)      # MEM(25) = 5 = 0x5
 
     # SH
-    sh t0, 106(x0)      # MEM(23) = 5 = 0X5
+    sh t0, 104(x0)      # MEM(26) = 5 = 0x5
 
 # 5 #
 
@@ -160,15 +160,15 @@ bgeu_test:
     j end
 
 beq_test_valid:
-    sw t0, 110(x0)
+    sw t0, 108(x0)
     j bne_test
 
 bne_test_valid:
-    sw t0, 114(x0)
+    sw t0, 112(x0)
     j blt_test
 
 blt_test_valid:
-    sw t0, 118(x0)
+    sw t0, 116(x0)
     j bge_test
 
 bge_test_valid:
@@ -201,16 +201,16 @@ end:
 #0xF
 #0xF
 #0x0
-#0x2400
+#0x2400 
 #0x0
 #0x0
 #0x1
 #0x1
 #0x5
-#0x6
-#0xF
-#0x5
-#0xA
+#0x6 
+#0xF 
+#0x5 
+#0xA 
 #0x2
 #0x2
 #0x0
