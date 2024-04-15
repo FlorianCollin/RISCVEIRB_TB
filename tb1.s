@@ -157,7 +157,7 @@ bltu_test:
     j bgeu_test
 
 bgeu_test:
-    blt t1, t0, bgeu_test_valid
+    bgeu t1, t0, bgeu_test_valid
     j end
 
 beq_test_valid:
