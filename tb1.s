@@ -149,11 +149,11 @@ blt_test:
     j bge_test
 
 bge_test:
-    beq t1, t0, bgeu_test_valid
+    bge t1, t0, bge_test_valid
     j bltu_test
 
 bltu_test:
-    bne t0, t1, bltu_test_valid
+    bltu t0, t1, bltu_test_valid
     j bgeu_test
 
 bgeu_test:
