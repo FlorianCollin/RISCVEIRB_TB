@@ -26,7 +26,7 @@ hexdump -v -e '"0x" /4 "%08x" ",\n"' "${base_name}.bin" > "${base_name}.hex"
 # Afficher le contenu du fichier hex
 cat "${base_name}.hex"
 
-rm "${base_name}.bin"
-rm "${base_name}.elf"
-rm "${base_name}.dump"
+# rm "${base_name}.bin"
+# rm "${base_name}.elf"
+# rm "${base_name}.dump"
 
